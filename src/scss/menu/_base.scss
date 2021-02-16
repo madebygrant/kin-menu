@@ -1,0 +1,100 @@
+.kin{
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --animation-speed: .3s;
+
+    box-sizing: border-box; font-family: var(--font-family);
+    
+    *{
+        box-sizing: border-box;
+    }
+
+    &--active{
+        display: block;
+    }
+    
+    &:not(.kin--active){
+        display: none;
+    }
+
+    &--multi{
+        --padding: 20px;
+        --padding-offset: 12px;
+
+        ul ul a {
+            padding-left: calc(var(--padding) + var(--padding-offset));
+        }
+        ul ul ul a {
+            padding-left: calc( var(--padding) * 2 + var(--padding-offset) );
+        }
+        ul ul ul ul a {
+            padding-left: calc( var(--padding) * 3 + var(--padding-offset) );
+        }
+        ul ul ul ul ul a {
+            padding-left: calc( var(--padding) * 4 + var(--padding-offset) );
+        }
+        ul ul ul ul ul ul a {
+            padding-left: calc( var(--padding) * 5 + var(--padding-offset) );
+        }
+    }
+
+    &__checkbox {
+        position: absolute; opacity: 0; right: 0; top: 0; padding: 0; width: auto !important; height: auto !important;
+
+        &:checked + label {
+            /* rotate arrow */
+            transform: translateY(-50%) rotate(-180deg) translate3d(0, 0, 0);
+        }
+        &::checked + label + ul, &:checked + label:nth-of-type(n) + ul {
+            display: block;
+
+        }
+    }
+
+    &__label{
+
+        --glyph: url('../images/chev-down-black.svg');
+        --glyph-size: 16px;
+        --width: 32px;
+        --height: 32px;
+        --position-top: 20px;
+        --position-right: 20px;
+
+        position: absolute; z-index: 1; cursor: pointer; transform: translateY(-50%);
+        right: var(--position-right); top: var(--position-top);
+        width: var(--width); height: var(--height);
+
+        background-color: transparent !important;  background-position: center; background-repeat: no-repeat; background-size: var(--glyph-size);
+        backface-visibility: hidden; background-image:  var(--glyph);
+        transition: transform var(--animation-speed) ease;
+
+        &:focus, &:active{
+            background-color: transparent !important;
+        }
+    }
+
+    &__group{
+        li{
+            user-select: none; position: relative; display: block;
+
+            &:focus, &:active{
+                background-color: transparent !important;
+            }
+
+            a{
+                display: block;
+            }
+        }
+    }
+
+    &__drop{
+        overflow: hidden; transition: all var(--animation-speed) ease-in-out;
+
+        &:not(.kin__drop--active){
+            max-height: 0vh;
+        }
+        &--active{
+            max-height: 100vh;
+        }
+    }
+
+}

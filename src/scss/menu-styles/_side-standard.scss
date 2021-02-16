@@ -1,0 +1,92 @@
+body[data-kin="side"]{
+
+    .kin-toggle-button{
+        --span-colour: #252525;
+        --span-colour-active: #ffffff;
+
+        top: 16px; left: 16px;
+    }
+
+    &.kin-is--loaded{
+
+        .kin{
+            --background-colour: #252525;
+            --background-colour-2: #3b3b3b;
+            --background-colour-3: #504f4f;
+            --background-colour-4: #666666;
+            --background-colour-current: #f2cc8f;
+            --text-colour: #ffffff;
+            --link-colour: #ffffff;
+            --link-colour-hover: #ffffff;
+            --link-colour-active: #ffffff;
+            --link-colour-current: #252525;
+            --item-height: 38px;
+            --width: 50vw;
+
+            position: fixed; top: 0; left: 0; z-index: 98; height: 100vh; padding: 64px 0 24px;
+            color: var(--text-colour); background-color: var(--background-colour); 
+            display: flex; flex-direction: column; //justify-content: center;
+            transition: var(--animation-speed) left cubic-bezier(0.77, 0, 0.175, 1);
+
+            @media only screen and (min-width: 769px) {
+                width: var(--width); left: calc( var(--width) * -1);
+            }
+            @media only screen and (max-width: 768px) {
+                width: 100vw; left: -100vw;
+            }
+
+            &--active {
+                left: 0 !important;
+            }
+
+            &__inner{
+                ul{
+                    padding: 0;
+                }
+            }
+
+            &__label{
+                --glyph: url('../images/chev-down-white.svg');
+            }
+
+            &__item{
+                line-height: var(--item-height); //width: max-content; padding-right: 32px;
+
+                a{
+                    padding-left: 24px; padding-right: 24px;
+                    
+                    &:link, &:visited{
+                        color: var(--link-colour);
+                    }
+                    &:hover{
+                        color: var(--link-colour-hover);
+                    }
+                    &:active{
+                        color: var(--link-colour-active);
+                    }
+
+                    &.is-current-page{
+                        color: var(--link-colour-current); background-color: var(--background-colour-current);
+                    }
+                }
+
+            }
+
+            &__drop{
+                li {
+                    background-color: var(--background-colour-2); padding-left: 0;
+
+                    ul li{
+                        background-color: var(--background-colour-3);
+
+                        ul li{
+                            background-color: var(--background-colour-4);
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
+}

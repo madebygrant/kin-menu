@@ -1,0 +1,36 @@
+.kin-toggle-button{
+
+    --span-colour: #000000;
+    --span-colour-active: #000000;
+    --background-colour: transparent;
+    --background-colour-active: transparent;
+    
+    position: fixed; z-index: 100; width: var(--width); height: var(--height);
+    cursor: pointer; outline: none; -webkit-appearance: none;
+    transition: all var(--animation-speed);
+
+    &__span, &__span:before, &__span:after{
+        content: ''; position: absolute; display: block; cursor: pointer; background: var(--span-colour);
+        transition: all var(--animation-speed);
+    }
+
+    &:not(.kin-toggle-button--active){
+        background-color: var(--background-colour);
+    }
+
+    &--active{
+        background-color: var(--background-colour-active);
+
+        .kin-toggle-button__span{
+
+            &:before{
+                background: var(--span-colour-active);
+                transition: all var(--animation-speed);
+            }
+            &:after{
+                background: var(--span-colour-active);
+                transition: all var(--animation-speed);
+            }
+        }
+    }
+}

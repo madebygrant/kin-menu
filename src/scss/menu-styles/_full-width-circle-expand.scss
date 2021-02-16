@@ -1,0 +1,90 @@
+body[data-kin="circle-expand"]{
+
+    .kin-toggle-button{
+        --span-colour: #ffffff;
+        --span-colour-active: #ffffff;
+
+        top: 15px; right: 15px;
+    }
+
+    &.kin-is--loaded{
+
+        .kin{
+            --background-colour: #03A9F4;
+            --text-colour: #ffffff;
+            --link-colour: #ffffff;
+            --link-colour-hover: #ffffff;
+            --link-colour-active: #ffffff;
+            --link-colour-current: #f2cc8f;
+            --item-height: 38px;
+
+            color: var(--text-colour);
+            display: flex; flex-direction: row; justify-content: center;
+
+            &:not(.kin--active){
+                display: block;
+            }
+
+            &:before{
+                content: ' '; display: block; height: 48px; width: 48px;
+                background-color: var(--background-colour); border-radius: 50%;
+                position: fixed; top: 12px; right: 12px; z-index: 98;
+                transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+            }
+
+            &__inner{
+                width: 100%; height: 100vh; max-width: 1024px; padding: 15px 6rem 1rem 2rem; 
+                position: fixed; z-index: -1; opacity: 0; visibility: hidden;
+                transition: opacity .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+                ul{
+                    padding: 0;
+                }
+            }
+
+            &__group{
+                width: 100%;
+            }
+
+            &__label{
+                --glyph: url('../images/chev-down-white.svg');
+            }
+
+            &__item{
+                line-height: var(--item-height);
+
+                ul{
+                    padding-left: 1rem;
+                }
+
+                a{
+                    &:link, &:visited{
+                        color: var(--link-colour);
+                    }
+                    &:hover{
+                        color: var(--link-colour-hover);
+                    }
+                    &:active{
+                        color: var(--link-colour-active);
+                    }
+
+                    &.is-current-page{
+                        color: var(--link-colour-current);
+                    }
+                }
+            }
+
+            &--active{
+                &:before{
+                    transform: scale(100);
+                }
+
+                .kin__inner{
+                    z-index: 99; opacity: 1; visibility: visible;
+                }
+            }
+        }
+
+    }
+
+}

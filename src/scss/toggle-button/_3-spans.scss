@@ -1,0 +1,46 @@
+body:not([data-kin-toggle]), body[data-kin-toggle="3-spans"]{
+
+    .kin-toggle-button{
+
+        --width: 42px;
+        --height: 40px;
+        --animation-speed: .2s;
+
+        width: var(--width); height: var(--height);
+        min-width: auto; border: 0; border-radius: 8px;
+
+        &__span, &__span:before, &__span:after{
+            border-radius: 1px; height: 2px; width: 28px;
+        }
+
+        &__span{
+            left: 7px; top: 20px;
+
+            &:before{
+                left: 0; top: -8px;
+            }
+            &:after{
+                left: 0; bottom: -8px;
+            }
+        }
+
+        &--active{
+            .kin-toggle-button__span{
+                background-color: transparent; box-shadow: none;
+
+                &:before, &:after{
+                    top: 0;
+                }
+                &:before{
+                    top: 0 !important; transform: rotate(45deg) translate3d(0, 0, 0);
+                    
+                }
+                &:after{
+                    transform: rotate(-45deg) translate3d(0, 0, 0);
+                }
+            }
+        }
+
+    }
+
+}
