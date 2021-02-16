@@ -159,6 +159,8 @@ wrapperContent | array | Select items within the page to be added into in the wr
 
 Currently has four loosely styled styles but totally optional. It requires the `kin-menu.all.css` stylesheet to be loaded.
 
+You can preview the styles at: <https://madebygrant.com/kin-menu/examples.html>
+
 To apply a style, either:
 - Add a `data-kin` attribute to the \<body> tag with the corresponding option value.
 - Apply the `setStyle()` method to the initialised Kin Menu object and give it the corresponding option value. \
