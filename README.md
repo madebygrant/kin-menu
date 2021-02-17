@@ -16,19 +16,19 @@ Create a menu for small screen devices using elements within the page. Example, 
 #### Add the JS file
 
 ```html
-<script defer src="https://cdn.jsdelivr.net/gh/madebygrant/kin-menu@1.0/dist/kin-menu.min.js">
+<script defer src="https://cdn.jsdelivr.net/gh/madebygrant/kin-menu@1.0/dist/js/kin-menu.min.js">
 ```
 
 #### Add the CSS stylesheet
 *The CSS is optional but ideally at least include the base css file to build off from.*
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/madebygrant/kin-menu@1.0/dist/kin-menu.all.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/madebygrant/kin-menu@1.0/dist/css/kin-menu.all.css">
 ```
 
 If you want just want to use the base css stylesheet without the included styles:
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/madebygrant/kin-menu@1.0/dist/kin-menu.base.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/madebygrant/kin-menu@1.0/dist/css/kin-menu.base.css">
 ```
 
 #### Initialise Kin Menu
