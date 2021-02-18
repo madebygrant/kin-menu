@@ -183,7 +183,7 @@ Initialise the menu
 
 `kin.init();`
 
-### start
+### create
 
 Create and render the menu.
 
