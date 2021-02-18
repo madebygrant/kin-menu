@@ -185,7 +185,7 @@ Initialise the menu
 
 ### create
 
-Create and render the menu.
+Create and render the menu
 
 `kin.create();`
 
