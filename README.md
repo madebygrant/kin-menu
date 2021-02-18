@@ -89,36 +89,36 @@ groups | array | The items you want to add into the Kin Menu
 *The example below, shows how to add multiple groups and items into the Kin Menu.*
 
 ```
-    const kinOptions = {
-		windowWidth: 1024,
-		groups: [
-        	{
-                element: 'header',
-                class: 'side-header',
-                clones: [
-                    'figure.site-logo',
-                    'h1.site-heading'
-                ]
-            },
-            {
-                element: 'ul',
-                class: 'side-menu',
-                clones: [
-                    'nav.top-menu > ul > li'
-                ]
-            },
-            {
-                element: 'div',
-                class: 'side-social-media',
-                clones: [
-                    'div.social-media a'
-                ]
-            },
-        ]
-	};
-	
-	const kin = new KinMenu(kinOptions);
-	kin.init();
+const kinOptions = {
+    windowWidth: 1024,
+    groups: [
+        {
+            element: 'header',
+            class: 'side-header',
+            clones: [
+                'figure.site-logo',
+                'h1.site-heading'
+            ]
+        },
+        {
+            element: 'ul',
+            class: 'side-menu',
+            clones: [
+                'nav.top-menu > ul > li'
+            ]
+        },
+        {
+            element: 'div',
+            class: 'side-social-media',
+            clones: [
+                'div.social-media a'
+            ]
+        },
+    ]
+};
+
+const kin = new KinMenu(kinOptions);
+kin.init();
 ```
 
 ## Toggle Button Options
@@ -133,26 +133,26 @@ wrapperContent | array | Select items within the page to be added into in the wr
 *The example below, adds a \<figure> (`figure.site-logo`) element from the page into the toggle button's wrapper, next to the button.*
 
 ```
-    const kinOptions = {
-		groups: [
-            {
-                element: 'ul',
-                class: 'side-menu',
-                clones: [
-                    'nav.top-menu > ul > li'
-                ],
-            },
-        ],
-        toggleButton: {
-          hasWrapper: true,
-          wrapperContent: [
-              'figure.site-logo'
-          ]
-      	}
-	};
-	
-	const kin = new KinMenu(kinOptions);
-	kin.init();
+const kinOptions = {
+    groups: [
+        {
+            element: 'ul',
+            class: 'side-menu',
+            clones: [
+                'nav.top-menu > ul > li'
+            ],
+        },
+    ],
+    toggleButton: {
+        hasWrapper: true,
+        wrapperContent: [
+            'figure.site-logo'
+        ]
+    }
+};
+
+const kin = new KinMenu(kinOptions);
+kin.init();
 ```
 
 ## Styles
@@ -185,7 +185,7 @@ Initialise the menu
 
 ### create
 
-Create and render the menu.
+Create and render the menu
 
 `kin.create();`
 
