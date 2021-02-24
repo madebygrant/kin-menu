@@ -33,7 +33,7 @@ If you want just want to use the base css stylesheet without the included styles
 
 #### Initialise Kin Menu
 
-```
+```javascript
 const kinOptions = {
 	// Your options go here.   
 }
@@ -44,7 +44,7 @@ kin.init();
 #### Hide items when the menu is active
 Within your website's CSS stylesheet, include a rule similar to the example below, for when the `kin-is--loaded` class has been added to the `<body>` tag.
 
-```
+```css
 body.kin-is--loaded { 
     .top-menu{
         display: none;
@@ -88,7 +88,7 @@ kin.init();
 
 *The example below, shows how to add multiple groups and items into the Kin Menu.*
 
-```
+```javascript
 const kinOptions = {
     windowWidth: 1024,
     groups: [
@@ -132,7 +132,7 @@ wrapperContent | array | Select items within the page to be added into in the wr
 
 *The example below, adds a \<figure> (`figure.site-logo`) element from the page into the toggle button's wrapper, next to the button.*
 
-```
+```javascript
 const kinOptions = {
     groups: [
         {
