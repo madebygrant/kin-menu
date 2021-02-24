@@ -69,21 +69,21 @@ groups | array | The items you want to add into the Kin Menu
 
 *The example below, it adds the \<li> items from a \<nav> (`nav.top-menu`) in the page into a group (`ul.side-menu`) in the Kin Menu.*
 
-```
-    const kinOptions = {
-		groups: [
-            {
-                element: 'ul',
-                class: 'side-menu',
-                clones: [
-                    'nav.top-menu > ul > li'
-                ]
-            },
-        ]
-	};
-	
-	const kin = new KinMenu(kinOptions);
-	kin.init();
+```javascript
+const kinOptions = {
+    groups: [
+        {
+            element: 'ul',
+            class: 'side-menu',
+            clones: [
+                'nav.top-menu > ul > li'
+            ]
+        },
+    ]
+};
+
+const kin = new KinMenu(kinOptions);
+kin.init();
 ```
 
 *The example below, shows how to add multiple groups and items into the Kin Menu.*
