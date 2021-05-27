@@ -98,3 +98,10 @@
     }
 
 }
+
+// Hide the menu when the browser window is being resized
+body.kin-window-resizing{
+    .kin{
+        display: none !important;
+    }
+}

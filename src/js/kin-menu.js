@@ -46,7 +46,7 @@ class KinMenu {
         };
 
         // Plugin options
-        options.toggleButton = Object.assign(defaults.toggleButton, options.toggleButton); // Merge toggle button related options
+        options.toggleButton = options.toggleButton ? Object.assign(defaults.toggleButton, options.toggleButton) : defaults.toggleButton; // Merge toggle button related options
         this._options = Object.assign(defaults, options); // Merge options
         
         // Cloned items array
@@ -389,7 +389,10 @@ class KinMenu {
     // Initialise the plugin
     init(){
         const _this = this,
-            options = this._options;
+            options = this._options,
+            prefix = this._prefix;
+
+        let timer;
 
         // On document ready, plugin activate/destroy based on given screen width in the plugin options
         ready(() =>{
@@ -397,10 +400,23 @@ class KinMenu {
             windowWidth <= options.windowWidth && _this.create();
         });
 
-        // When window is resized, plugin activate/destroy based on given screen width in the plugin options
+        // When window is resized
         window.addEventListener("resize", () => {
             let windowWidth = document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
+
+            // Add a class to the <body> tag indicating the window is resizing
+            if(!_this._body.classList.contains(prefix + '-window-resizing')){
+                _this._body.classList.add(prefix + '-window-resizing');
+            }
+
+            // Create or destroy the menu based on the given screen width in the plugin options
             windowWidth >= options.windowWidth ? _this.destroy() : _this.create();
+
+            // Remove the window resizing class from the <body> tag
+            clearTimeout(timer);
+            timer = setTimeout(()=>{
+                _this._body.classList.remove(prefix + '-window-resizing');
+            }, 250)
         })
     }
 
